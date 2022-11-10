@@ -1,12 +1,12 @@
 version: "3"
 services:
-  python:
+  puti:
     restart: always
     build: .
-    container_name: "python3"
-    working_dir: "~"
+    container_name: "puti_camera"
+    working_dir: "/home/workspace"
     tty: true
     volumes:
-      - ./workspace:~/workspace
+      - ./workspace:/home/workspace
     devices:
       - /dev/video0:/dev/video0:mwr
