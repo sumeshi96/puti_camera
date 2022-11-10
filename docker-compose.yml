@@ -4,7 +4,9 @@ services:
     restart: always
     build: .
     container_name: "python3"
-    working_dir: ~/
+    working_dir: "~"
     tty: true
     volumes:
       - ./workspace:~/workspace
+    devices:
+      - /dev/video0:/dev/video0:mwr
