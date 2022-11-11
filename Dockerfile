@@ -14,7 +14,9 @@ RUN apt-get update && apt-get upgrade && \
 	libglib2.0-0 \
 	libsm6 \
 	libxrender1 \
-	libxext6
+	libxext6 \
+	libffi-dev \
+	libnacl-dev
 RUN python3 -m pip install --upgrade pip setuptools && \
 	python3 -m pip install numpy && \
 	python3 -m pip install opencv-python && \
