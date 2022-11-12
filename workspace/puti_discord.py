@@ -1,8 +1,10 @@
 import discord
+import discord_token
+import puti_camera as pc
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
+intents.messages = True
 intents.message_content = True
-
 client = discord.Client(intents=intents)
 
 
@@ -16,7 +18,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    if message.content.startswith('?puti'):
+        pc.get_img()
+        await message.channel.send(file=discord.File('./image.jpg'))
 
-client.run('your token here')
+client.run(discord_token.get_token())
