@@ -1,9 +1,9 @@
-FROM ubuntu:22.10
+FROM debian
 USER root
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN apt-get update && apt-get upgrade && \
+RUN apt-get update -y && apt-get upgrade -y && \
 	apt-get install -y nano \
 	python3 \
 	python3-dev \
@@ -16,10 +16,10 @@ RUN apt-get update && apt-get upgrade && \
 	libxrender1 \
 	libxext6 \
 	libffi-dev \
-	libnacl-dev
-RUN python3 -m pip install --upgrade pip setuptools && \
-	python3 -m pip install numpy && \
-	python3 -m pip install opencv-python && \
-	python3 -m pip install discord.py
-
-RUN mkdir /home/workspace
+	libnacl-dev && \
+	python3 -m pip install --upgrade pip \
+	setuptools && \
+	python3 -m pip install numpy \
+	opencv-python \
+	discord.py && \
+	mkdir /home/workspace 
