@@ -7,7 +7,6 @@ intents.messages = True
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
@@ -19,6 +18,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('?puti'):
+        await message.channel.send('Please wait a minite...')
         pc.get_img()
         await message.channel.send(file=discord.File('./image.jpg'))
 
