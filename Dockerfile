@@ -17,9 +17,9 @@ RUN apt-get update -y && apt-get upgrade -y && \
 	libxext6 \
 	libffi-dev \
 	libnacl-dev && \
-	python3 -m pip install --upgrade pip \
-	setuptools && \
-	python3 -m pip install numpy \
-	opencv-python \
-	discord.py && \
+#	python3 -m pip install --upgrade pip \
+#	setuptools && \
+#	python3 -m pip install numpy \
+#	opencv-python \
+#	discord.py && \
 	mkdir /home/workspace 
